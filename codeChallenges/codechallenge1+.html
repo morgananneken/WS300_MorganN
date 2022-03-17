@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Code Challenge 1 - Morgan</title>
+	<style type="text/css">
+		body{
+			font-family: Verdana;
+		}
+		div {
+			height: 50px;
+			width: 50px;
+		}
+	</style>
+</head>
+<body>
+	<div id="my-box"></div>
+	
+	<script>
+		'use strict';
+        const box = document.getElementById('my-box');
+       
+
+
+        let color1 = genHex();
+        let color2 = genHex();
+
+
+        box.style.backgroundColor = color1;
+
+        var firstColor = true;
+
+
+
+//first color
+        function getRandInt(min = 1, max = 100){
+            return Math.floor(Math.random() *(max-min +1))+min;
+        }
+        function genHex(){
+            let hexValues = '0123456789ABCDEF';
+            hexValues = hexValues.split('');//converts string to arrat and stores it in the same variable
+            let hexColor = '#';
+
+            for(let i =0; i < 6; i++){
+                let newVal = hexValues[getRandInt(0,15)];
+                hexColor+=newVal; 
+                console.log(hexColor);
+            }
+
+            return hexColor;
+        }
+
+
+        
+    box.onclick= function(){
+        if(firstColor == true){
+            box.style.backgroundColor = color2; 
+            firstColor = false;
+        }else{
+            box.style.backgroundColor = color1;
+            firstColor = true;
+        }
+    }
+
+
+        
+
+
+
+	</script>
+</body>
+</html>

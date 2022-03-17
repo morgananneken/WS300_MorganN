@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Code Challenge 1 - Morgan</title>
+	<style type="text/css">
+		body{
+			font-family: Verdana;
+		}
+		div {
+			height: 50px;
+			width: 50px;
+		}
+        .blue {
+            background-color: blue;
+        }
+        .red {
+            background-color: red;
+        }
+
+	</style>
+</head>
+<body>
+	<div class="blue"></div>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script>
+		'use strict';
+
+        
+
+
+		$('div').click(function (){
+                if ($('div').hasClass('blue')) {
+                    $('div.blue').removeClass('blue').addClass('red');
+                } else {
+                    $('div.red').removeClass('red').addClass('blue');
+                }
+            })
+
+
+	</script>
+</body>
+</html>
