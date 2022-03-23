@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Challenge 2</title>
+    <style>
+        .box {
+            background-color: maroon;
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 100px;
+            left: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+    <script>
+        'use strict';
+        
+
+        // $('.box').animate({left:'400px'}, 1000)
+        // $('.box').animate({top:'400px'}, 1000)
+        // $('.box').animate({left:'100'}, 1000)
+        // $('.box').animate({top:'100'}, 1000)
+        
+
+        $(document).ready(function () {
+                function loop() {
+                    $('.box').animate({ left: '400px' }, 1000)
+                    $('.box').animate({ top: '400px' }, 1000)
+                    $('.box').animate({ left: '100' }, 1000)
+                    $('.box').animate({ top: '100' }, 1000, function () {
+                        loop();
+                    });
+                }
+                loop();
+            });
+        // $('.box').animate({left:'400px'}, 1000)
+        // $('.box').animate({top:'400px'}, 1000)
+        // $('.box').animate({left:'100'}, 1000)
+        // $('.box').animate({top:'100'}, 1000)
+    
+    
+
+    </script>
+</body>
+</html> 
