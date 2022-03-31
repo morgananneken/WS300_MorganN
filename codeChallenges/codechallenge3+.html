@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Challenge 3 Advanced</title>
+    <style>
+        html {
+            font-family: verdana;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="typing">
+    <div id="message"></div>
+    <div id="char">Number of Characters:<span id="length"></span></div>
+</body>
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+<script>
+    'use strict';
+  
+$('#typing').keyup(function () {
+  
+  $('#message').text($(this).val());
+  $('#message').val($(this).val());
+  $('#length').text($(this).val().length);
+});
+
+
+
+
+
+
+</script>
+</html>
