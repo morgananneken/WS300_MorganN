@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Challenge 3 Advanced</title>
+    <style>
+        html{
+            font-size: 1rem;
+            font-family: verdana;
+        }
+        div {
+            height: 50px;
+            margin: 10px 0 10px 0;
+        }
+        .first {
+            background-color: blue;
+            width: 75px;
+        }
+
+        .second{
+            background-color: plum;
+            width: 125px;
+        }
+    
+    </style>
+</head>
+<body>
+    
+    <div class="first"></div>
+    <div class="second"></div>
+
+</body>
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+<script>
+    'use strict';
+
+    let firstDiv = $('.first'),
+        secondDiv = $('second');
+
+    $(document).on('mousemove', function (e) {
+        $('.first').css({ width: (e.pageX) + 'px' });
+        $('.first').text((e.pageX) + 'px' + (e.pageY) + 'px');
+        $(document).on('click', function (e) {
+            $('.second').css({ width: (e.pageX) + 'px' });
+        })
+    });
+
+
+</script>
+</html>
