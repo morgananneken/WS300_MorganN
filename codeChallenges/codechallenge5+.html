@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Challenge 5</title>
+    <style>
+        html{
+            font-size: 1rem;
+            font-family: verdana;
+        }
+        #clock {
+            display: inline-block;
+            width: 300px;
+            line-height: 2;
+            background-color: blue;
+            text-align: center;
+            color: white;
+            font-size: 2.5rem;
+        }
+        #clock.daytime {
+            background-color: red;
+        }
+        
+    
+    </style>
+</head>
+<body>
+    
+    <div id="clock"></div>
+
+</body>
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+<script>
+    'use strict';
+
+function getTime() {
+            let currentTime = new Date()
+            let hours = currentTime.getHours()
+            let minutes = currentTime.getMinutes()
+            let seconds = currentTime.getSeconds()
+
+            if (minutes < 10)
+                minutes = "0" + minutes;
+
+            let ampm = "AM";
+            if(hours >= 6){
+                $('#clock').addClass('daytime');
+            }
+            if(hours >=18 || hours <6){
+                $('#clock').removeClass('daytime');
+            }
+            if (hours >= 12) {
+                ampm = "PM";
+                hours = hours - 12;
+            }
+            if (hours == 0) {
+                hours = 12;
+            }
+            if (hours < 10){
+                hours = "0" + hours;
+            }
+            if(seconds < 10){
+                seconds = "0" + seconds;
+            }
+            
+            let currentClock = hours + ":" + minutes + ":" + seconds + " " + ampm;
+            setTimeout(getTime, 1000);
+            $('#clock').text(currentClock);
+        }
+
+        getTime();
+
+
+</script>
+</html>
